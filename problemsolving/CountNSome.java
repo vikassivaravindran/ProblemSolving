@@ -53,10 +53,7 @@ public class CountNSome {
 			int j = i + 1;
 			if (result[i] == result[j++]) {
 				appearanceCount++;
-			} else {
-				continue;
-			}
-
+			} 
 			if (appearanceCount == n) {
 				countFlag++;
 				appearanceCount = 1;
