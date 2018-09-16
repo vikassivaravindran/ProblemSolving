@@ -6,6 +6,7 @@ package com.vikas.official;
  * @author Vikas Siva Ravindran Java Program to perform 1. Insertion at
  *         Beginning 2. Insertion at End 3. Insertion at Middle 4. Deletion at
  *         Specified Position 5. Deletion at the Beginning 6. Deletion at the End
+ Singly Linked List
  */
 public class LinkedList {
 
