@@ -21,7 +21,7 @@ public class FindSumSubArray {
 
 	// Java method to return idex of subarray start and end which sums up to the defined Sum.
 	// O(n2) time complexity Worst case
-	private static int[] getIndexofSum(int[] numbers, int length, int total) {
+	/*private static int[] getIndexofSum(int[] numbers, int length, int total) {
 		// TODO Auto-generated method stub
 
 		int[] output = new int[2];
@@ -50,5 +50,31 @@ public class FindSumSubArray {
 		output[0] = 0;
 		output[1] = 0;
 		return output;
+	}*/
+
+	// Time Complexity O(n)
+	private static int[] getIndexofSum(int[] numbers, int start, int end, int total) {
+		// TODO Auto-generated method stub
+		int sum_so_far = 0;
+		int answers[] = new int[2];
+
+		for (int i = start; i <= numbers.length - 1; i++) {
+
+			sum_so_far += numbers[i];
+			end = i;
+
+			if (sum_so_far == total) {
+				answers[0] = start;
+				answers[1] = end;
+			}
+
+			else if (sum_so_far > total) {
+				start++;
+				end = start;
+				answers = getIndexofSum(numbers, start, end, total);
+				return answers;
+			}
+		}
+		return answers;
 	}
 }
