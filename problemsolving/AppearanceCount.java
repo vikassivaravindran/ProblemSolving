@@ -11,11 +11,10 @@ public class AppearanceCount {
 
 	/**
 	 * @param args
-	 * Java sample program to print apperance of the character in a string (i.e) aaaabbbb ---->  a4b3
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String s = "aaa";
+		String s = "ssss";
 		s = checkforCount(s);
 		System.out.println(s);
 
@@ -29,8 +28,18 @@ public class AppearanceCount {
 
 		StringBuilder sb = new StringBuilder();
 
-		for (int i = 0; i < s.length() - 1; i++) {
+		for (int i = 0; i <= s.length() - 1; i++) {
 
+			if( i == s.length()-1) {
+				if(s.charAt(i) != s.charAt(i-1)) {
+					sb.append(s.charAt(i));
+					return sb.toString();
+				}
+				else {
+					break;
+				}
+			}
+			
 			if (s.charAt(i) != s.charAt(i + 1) && count==1) {
 				sb.insert(++position,s.charAt(i));
 			} else if(s.charAt(i) == s.charAt(i + 1) ){
